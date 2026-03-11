@@ -10,6 +10,7 @@ namespace Poligon2026B
     {
         static void Main(string[] args)
         {
+            // Bogdan Markovic
         }
     }
 }
