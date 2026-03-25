@@ -26,8 +26,6 @@ namespace Poligon2026B
             P.snimi();
             poligon P2 = poligon.ucitaj();
             P2.stampa();
-
-            Console.ReadKey();
         }
     }
 }
