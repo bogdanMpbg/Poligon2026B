@@ -17,6 +17,26 @@ namespace Poligon2026B
             this.kraj = kraj;
         }
 
+        public static double SP(vektor a, vektor b) 
+        { 
+            tacka at = a.centriraj();
+            tacka bt = b.centriraj();
+            return at.x * bt.x + at.y * bt.y;
+        }
+
+        public static double VP(vektor a, vektor b)
+        {
+            tacka at = a.centriraj();
+            tacka bt = b.centriraj();
+            return at.x * bt.y - at.y * bt.x;
+        }
+
+        public double duzina()
+        {
+            tacka druga = this.centriraj();
+            return druga.d();
+        }
+
         public tacka centriraj()
         {
             double x = kraj.x - pocetak.x;
