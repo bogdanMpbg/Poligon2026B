@@ -82,5 +82,27 @@ namespace Poligon2026B
             o += v2.duzina();
             return o;
         }
+
+        public bool konveksan()
+        {
+            int t = 0;
+            for (int i = 0; i < br_temena; i++)
+            {
+                vektor v1 = new vektor(teme[i], teme[(i + 1) % br_temena]);
+                vektor v2 = new vektor(teme[(i + 1) % br_temena], teme[(i + 2) % br_temena]);
+                if (vektor.VP(v1, v2) < 0)
+                {
+                    t++;
+                }
+            }
+            if (t == 0 || t == br_temena)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

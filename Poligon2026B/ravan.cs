@@ -14,9 +14,19 @@ namespace Poligon2026B
             vektor AC = new vektor(a.pocetak, C);
             double aAB = vektor.VP(a, AB);
             double aAC = vektor.VP(a, AC);
-            if (aAC * aAB > 0) return 0; // sa iste
-            if (aAC * aAB < 0) return -1; // razne strane
-            return 1; // bar jedna tacka lezi na vektoru
+
+            if (aAC * aAB > 0)
+            {
+                return 0; // sa iste
+            }
+            else if (aAC * aAB < 0)
+            {
+                return -1; // razne strane
+            }
+            else
+            {
+                return 1; // bar jedna tacka lezi na vektoru
+            }
         }
     }
 }

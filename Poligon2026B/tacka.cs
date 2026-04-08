@@ -21,8 +21,14 @@ namespace Poligon2026B
         }
         public static bool iste(tacka A, tacka B)
         {
-            if ((A.x == B.x) && (A.y == B.y)) return true;
-            else return false;
+            if (A.x == B.x && A.y == B.y)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

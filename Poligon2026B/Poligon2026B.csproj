@@ -46,6 +46,7 @@
     <Compile Include="poligon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ravan.cs" />
     <Compile Include="tacka.cs" />
     <Compile Include="vektor.cs" />
   </ItemGroup>

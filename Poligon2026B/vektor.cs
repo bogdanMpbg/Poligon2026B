@@ -43,12 +43,19 @@ namespace Poligon2026B
             double y = kraj.y - pocetak.y;
             return new tacka(x, y);
         } 
+
         public bool sece(vektor b)
         {
             int x = ravan.SIS(this, b.pocetak, b.kraj);
             int y = ravan.SIS(b, this.pocetak, this.kraj);
-            if (x * y != 0) return true;
-            else return false;
+            if (x * y != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void stampaj()

@@ -21,11 +21,26 @@ namespace Poligon2026B
             AB.stampaj();
             */
 
+            /*
             poligon P = poligon.unos();
             P.stampa();
             P.snimi();
             poligon P2 = poligon.ucitaj();
             P2.stampa();
+            */
+
+            /*
+            tacka A = new tacka(1, 1);
+            tacka B = new tacka(5, 1);
+            tacka C = new tacka(2, 0.1);
+            tacka D = new tacka(2, 0);
+            vektor AB = new vektor(A, B);
+            vektor CD = new vektor(C, D);
+            Console.WriteLine(AB.sece(CD));
+            */
+
+            poligon p = poligon.unos();
+            Console.WriteLine(p.konveksan());
         }
     }
 }
