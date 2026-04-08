@@ -40,7 +40,8 @@ namespace Poligon2026B
             */
 
             poligon p = poligon.unos();
-            Console.WriteLine(p.konveksan());
+            Console.WriteLine(p.povrsina());
+            Console.ReadKey();
         }
     }
 }

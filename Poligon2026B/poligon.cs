@@ -104,5 +104,54 @@ namespace Poligon2026B
                 return false;
             }
         }
+
+        public bool prost()
+        {
+            for (int i = 0; i < br_temena - 1; i++)
+            {
+                for (int j = i + 1; j < br_temena; j++)
+                {
+                    if (tacka.iste(teme[i], teme[j]))
+                    {
+                        return false;
+                    }
+                }
+            }
+            vektor[] stranica = new vektor[br_temena];
+            // napravim stranice
+            for (int i = 0; i < br_temena - 2; i++)
+            {
+                int kraj = br_temena;
+                if (i == 0) 
+                {
+                    kraj--;
+                }
+                for (int j = i + 2; j < kraj; j++)
+                {
+                    if (stranica[i].sece(stranica[j]))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        public double povrsina()
+        {
+            if (prost())
+            {
+                throw new Exception("prosti poligoni nemaju povrsinu");
+            }
+            double[] x = new double[br_temena];
+            double[] y = new double[br_temena];
+            double rez = 0;
+            for (int i = 0; i < br_temena; i++)
+            {
+                rez += teme[i].x * teme[(i + 1) % br_temena].y;
+                rez -= teme[i].y * teme[(i + 1) % br_temena].x;
+            }
+            return Math.Abs(rez)/2;
+        }
     }
 }
