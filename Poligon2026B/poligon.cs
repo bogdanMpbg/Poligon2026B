@@ -107,6 +107,7 @@ namespace Poligon2026B
 
         public bool prost()
         {
+            vektor[] stranica = new vektor[br_temena];
             for (int i = 0; i < br_temena - 1; i++)
             {
                 for (int j = i + 1; j < br_temena; j++)
@@ -115,9 +116,10 @@ namespace Poligon2026B
                     {
                         return false;
                     }
+                    stranica[i] = new vektor(teme[i], teme[j]);
                 }
             }
-            vektor[] stranica = new vektor[br_temena];
+            stranica[br_temena - 1] = new vektor(teme[br_temena - 1], teme[0]);
             // napravim stranice
             for (int i = 0; i < br_temena - 2; i++)
             {
