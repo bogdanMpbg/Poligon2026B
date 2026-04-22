@@ -76,8 +76,6 @@ namespace Poligon2026B
             {
                 Console.WriteLine("nije deltoid");
             }
-
-            Console.ReadKey();
         }
     }
 }
