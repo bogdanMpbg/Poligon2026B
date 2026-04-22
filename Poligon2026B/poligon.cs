@@ -9,8 +9,8 @@ namespace Poligon2026B
 {
     internal class poligon
     {
-        int br_temena;
-        tacka[] teme;
+        public int br_temena;
+        public tacka[] teme;
 
         public poligon(int n)
         {
@@ -107,7 +107,6 @@ namespace Poligon2026B
 
         public bool prost()
         {
-            vektor[] stranica = new vektor[br_temena];
             for (int i = 0; i < br_temena - 1; i++)
             {
                 for (int j = i + 1; j < br_temena; j++)
@@ -116,11 +115,16 @@ namespace Poligon2026B
                     {
                         return false;
                     }
-                    stranica[i] = new vektor(teme[i], teme[j]);
                 }
             }
-            stranica[br_temena - 1] = new vektor(teme[br_temena - 1], teme[0]);
+
+            vektor[] stranica = new vektor[br_temena];
             // napravim stranice
+            for (int i = 0; i < br_temena; i++)
+            {
+                stranica[i] = new vektor(teme[i], teme[(i + 1) % br_temena]);
+            }
+
             for (int i = 0; i < br_temena - 2; i++)
             {
                 int kraj = br_temena;
@@ -154,6 +158,72 @@ namespace Poligon2026B
                 rez -= teme[i].y * teme[(i + 1) % br_temena].x;
             }
             return Math.Abs(rez)/2;
+        }
+
+        public bool kvadrat()
+        {
+            vektor[] stranica = new vektor[br_temena];
+            // napravim stranice
+            for (int i = 0; i < br_temena; i++)
+            {
+                stranica[i] = new vektor(teme[i], teme[(i + 1) % br_temena]);
+            }
+
+            if ((stranica[0].duzina() == stranica[1].duzina()) && 
+                (stranica[1].duzina() == stranica[2].duzina()) &&
+                (stranica[2].duzina() == stranica[3].duzina()) &&
+                (stranica[3].duzina() == stranica[0].duzina()) &&
+                (vektor.VP(stranica[0], stranica[1]) == 0))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool pravougaonik()
+        {
+            vektor[] stranica = new vektor[br_temena];
+            // napravim stranice
+            for (int i = 0; i < br_temena; i++)
+            {
+                stranica[i] = new vektor(teme[i], teme[(i + 1) % br_temena]);
+            }
+
+            if ((stranica[0].duzina() == stranica[2].duzina()) && 
+                (stranica[1].duzina() == stranica[3].duzina()) &&
+                (vektor.VP(stranica[0], stranica[1]) == 0))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool deltoid()
+        {
+            vektor[] stranica = new vektor[br_temena];
+            // napravim stranice
+            for (int i = 0; i < br_temena; i++)
+            {
+                stranica[i] = new vektor(teme[i], teme[(i + 1) % br_temena]);
+            }
+
+            if (
+                (stranica[0].duzina() == stranica[3].duzina() && stranica[1].duzina() == stranica[2].duzina()) ||
+                (stranica[0].duzina() == stranica[1].duzina() && stranica[2].duzina() == stranica[3].duzina())
+                )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

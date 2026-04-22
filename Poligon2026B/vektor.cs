@@ -28,7 +28,7 @@ namespace Poligon2026B
         {
             tacka at = a.centriraj();
             tacka bt = b.centriraj();
-            return at.x * bt.y - at.y * bt.x;
+            return at.x * bt.y - at.x * bt.y;
         }
 
         public double duzina()

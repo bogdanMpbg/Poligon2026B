@@ -39,8 +39,44 @@ namespace Poligon2026B
             Console.WriteLine(AB.sece(CD));
             */
 
+            /*
             poligon p = poligon.unos();
             Console.WriteLine(p.povrsina());
+            Console.ReadKey();
+            */
+
+            poligon p = new poligon(4);
+            p.teme[0] = new tacka(1, 3);
+            p.teme[1] = new tacka(1, 1);
+            p.teme[2] = new tacka(4, 0);
+            p.teme[3] = new tacka(3, 3);
+
+            if (p.kvadrat())
+            {
+                Console.WriteLine("jeste kvadrat");
+            } else
+            {
+                Console.WriteLine("nije kvadrat");
+            }
+
+            if (p.pravougaonik())
+            {
+                Console.WriteLine("jeste pravougaonik");
+            }
+            else
+            {
+                Console.WriteLine("nije pravougaonik");
+            }
+
+            if (p.deltoid())
+            {
+                Console.WriteLine("jeste deltoid");
+            }
+            else
+            {
+                Console.WriteLine("nije deltoid");
+            }
+
             Console.ReadKey();
         }
     }
